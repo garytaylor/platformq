@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "required": ["author", "body", "posted_on"],
+  "properties": {
+    "author": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "posted_on": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
