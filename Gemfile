@@ -47,6 +47,7 @@ group :test do
   gem 'site_prism'
   gem 'json-schema'
   gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 

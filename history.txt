@@ -51,7 +51,10 @@ if the page needed it.  However, I felt maybe this is not what you are looking f
     with the comments as indicated by the json schema, so I will bear this in mind when creating the models.
 
 9. Now I can get data to/from the database, to be able to programatically create entities from test code, I prefer to use
-    factory girl, so I will add this to the gemfile.
+    factory girl, so I will add this to the gemfile.  I have also added the faker gem to help generate some dummy data.
+    A basic factory for the user and article has now been generated and used in the new articles_spec which is a request spec
+    for testing the API
+
 
 
 
