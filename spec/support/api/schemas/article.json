@@ -3,7 +3,8 @@
   "required": ["title", "posted_on", "author", "body", "body_content_type"],
   "properties": {
     "id": {
-      "type": "string"
+      "type": "number",
+      "format": "int64"
     },
     "url_slug": {
       "type": "string"
