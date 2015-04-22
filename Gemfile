@@ -46,6 +46,7 @@ group :test do
   gem 'capybara'
   gem 'site_prism'
   gem 'json-schema'
+  gem 'factory_girl_rails'
 end
 
 
