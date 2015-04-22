@@ -55,6 +55,15 @@ if the page needed it.  However, I felt maybe this is not what you are looking f
     A basic factory for the user and article has now been generated and used in the new articles_spec which is a request spec
     for testing the API
 
+10. Added route for articles index action.  I have done this using 'resources' even though there is only one route.  This
+     is simply because I am expecting to add more.  I have restricted resources to only generate a route for index
+     the reason for this is I prefer to be in control of the routes generated rather than just let it generate all 7 typical REST actions.
+     This way, I dont end up with wasted routes that never get used.
+
+11. Added articles controller as the request spec saw that as the first thing that failed.  Just added index action for now
+    just so I remain focussed on one failure at a time unless I can immediately see a pattern where I could fix many test
+    failures easily in 1 place.
+
 
 
 
