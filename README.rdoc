@@ -1,28 +1,32 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a blog application implemented using Rails 4.2.1 and ExtJS as the UI.
 
-Things you may want to cover:
+The code has been committed at micro intervals to enable the style of development to be seen. I typically use
+the BDD approach which can be seen here.
 
-* Ruby version
+Whilst the style of coding used here and even the design is well over the top for a simple blog application, this is
+intentional and was chosen based on discussions about what is required for the role.
+It didn't seem right to do a quicker and dirtier approach such as using rails templates to render HTML content
+and clicking on links to change the page rendered etc...
+I have also added the infrastructure for integration testing using selenium and page objects.  Again, over the top, but
+demonstrates an approach which I use to ensure that during development the whole application can be tested to ensure
+that things are not breaking which were not expected. If timescales / budget were tight and this was not required,
+I would happily skip this and rely on the request specs to verify the API and manual testing to ensure the UI interacts
+with the API correctly.
 
-* System dependencies
+As well as the commit logs, I have kept some more details nodes in history.txt which explain my thinking whilst
+developing this code.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Please note that due to this week being an extremely busy week, the code is not complete, but there
+is enough of it to see where I am going with it.  I have got to the point of doing request specs for the API
+and part of the implementation for the API, but there is no UI to drive the API.
+The UI was going to be an ExtJS single page application where I would have used models to reflect the JSON api that
+has been designed.  These models would be hooked up to a store which in turn would be hooked up to a simple data bound
+view which would render the list of articles with data such as the author name etc.. alongside the title.
+Clicking on an article would then bring up a window that displayed the full details of the article.  I expect the UI
+to have taken about 2 hours to do.
+ExtJS was chosen as it is very quick to develop and the code test is assumed to be more about the server side coding than
+the front end.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
