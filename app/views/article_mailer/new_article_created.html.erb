@@ -1,4 +1,6 @@
 <h2>Hi <%= @subscription.name %></h2>
 <p>A new article has been posted on the blog titled "<%= @article.title %>"</p>
+<p><%= link_to 'Click Here', root_url(anchor: "articles/#{@article.url_slug}") %> to view.</p>
+<p><%= link_to 'Click here to unsubscribe', subscription_url(id: @subscription.id), method: :delete %> to unsubscribe.</p>
 
 <p>Go check it out - its fab</p>
