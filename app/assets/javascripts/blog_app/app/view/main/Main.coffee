@@ -2,13 +2,14 @@ Ext.define 'BlogAppMain.view.main.Main',
   extend: 'Ext.container.Container'
   requires: [
     'BlogAppMain.view.articles.Articles'
+    'BlogAppMain.view.subscription.SubscriptionCreate'
   ]
   layout:
     type: 'border'
   items: [
     {
       region: 'north'
-      html: 'Subscribe Here'
+      xtype: 'subscriptioncreate'
       height: 100
     },
     {

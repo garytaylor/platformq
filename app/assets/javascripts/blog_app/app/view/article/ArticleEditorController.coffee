@@ -10,7 +10,7 @@ Ext.define 'BlogAppMain.view.article.ArticleEditorController',
     'articleedit #cancelButton':
       click: 'onCancelButtonClick'
   onOkButtonClick: ->
-    @getViewModel().get('articles').sync callback: =>
+    @getViewModel().get('articles').sync success: =>
       BlogAppMain.service.Article.hideAddArticleWindow()
   onCancelButtonClick: ->
     BlogAppMain.service.Article.hideAddArticleWindow()

@@ -1,4 +1,6 @@
 class SubscriptionsController < ApplicationController
+  #@TODO This is a workaround as I havent implemented a way to get the authenticity token over the API
+  protect_from_forgery except: :create
   def create
     @subscription = Subscription.new params.permit(:name, :email)
     if @subscription.save
