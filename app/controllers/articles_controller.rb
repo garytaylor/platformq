@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
     @article.body_content_type = 'text/x-markdown'
     @article.posted_on = Time.now
     if @article.save
+      ArticleService.after_user_article_create @article
       respond_to do |format|
         format.json
       end

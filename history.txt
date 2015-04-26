@@ -87,6 +87,11 @@ if the page needed it.  However, I felt maybe this is not what you are looking f
     In an agile environment, this would be classed as OK though as we would then enhance at a later stage when performance was a concern
     or we needed something like pagination.
 
+16. In order to implement subscriptions - I have added a subscription model along with an article mailer.  This uses active job to send
+        the emails in the background.  I have configured this with delayed_job as there are no external dependencies.  Personally I prefer
+        sidekiq for performance reasons, but it means for the code to run, redis needed to be installed.
+        So far, the subscriptions work when tested with an integration test with mocked data.  The next step is to implement the UI
+        for it.
 
 
 

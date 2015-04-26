@@ -26,4 +26,23 @@ describe 'Articles API', :type => :request do
     end
 
   end
+  context 'With 5 subscribers' do
+    before :each do
+      FactoryGirl.create :user
+      5.times do
+        FactoryGirl.create :subscription
+      end
+    end
+    describe 'POST /articles with subscribers' do
+      it 'Should send 5 emails in the background' do
+        perform_enqueued_jobs do
+          post '/articles.json', {url_slug: "slug",title:"A new article title", body:"# A new article body"}
+          expect(response).to be_valid_json_for_schema('article')
+        end
+        expect(ActionMailer::Base.deliveries.count).to eql 5
+
+
+      end
+    end
+  end
 end
