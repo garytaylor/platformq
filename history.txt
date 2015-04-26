@@ -80,6 +80,13 @@ if the page needed it.  However, I felt maybe this is not what you are looking f
     if we keep the server focussed on just delivering the JSON in a standard form and let the UI deal with presenting that
     data to the user, this will keep the server performing well as it has less work to do.
 
+15. Added ability to show a blog entry by double clicking in view.  At present, this uses the data that was already loaded when the
+    list was generated.  This is a little inefficient as this means that the list has to load everything - including the body, all of
+    the comments etc... just in case the user double clicks on it.  If this were to be done slightly better, I would have made the
+    viewer fetch the data straight from the server and perhaps reduce the data sent in the list to just that data required by the list.
+    In an agile environment, this would be classed as OK though as we would then enhance at a later stage when performance was a concern
+    or we needed something like pagination.
+
 
 
 

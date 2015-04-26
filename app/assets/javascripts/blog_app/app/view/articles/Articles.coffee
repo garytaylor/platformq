@@ -1,17 +1,20 @@
 Ext.define 'BlogAppMain.view.articles.Articles',
-  extend: 'Ext.view.View'
+  extend: 'Ext.container.Container'
   alias: 'widget.articles'
   requires: [
     'BlogAppMain.view.articles.ArticlesModel',
     'BlogAppMain.view.articles.ArticlesController',
-    'BlogAppMain.service.Markdown'
+    'BlogAppMain.service.Markdown',
+    'Ext.view.View'
 
   ]
   viewModel: 'articles'
   controller: 'articles'
-  bind:
-    store: '{articles}',
-  tpl: "<div class='articles'>
+  items: [
+    xtype: 'dataview'
+    bind:
+      store: '{articles}',
+    tpl: "<div class='articles'>
           <tpl for='.'>
             <div class='article'>
               <div class='header'>
@@ -23,4 +26,5 @@ Ext.define 'BlogAppMain.view.articles.Articles',
             </div>
           </tpl>
       </div>"
-  itemSelector: '.article'
+    itemSelector: '.article'
+  ]

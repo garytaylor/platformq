@@ -8,9 +8,3 @@ Ext.define 'BlogAppMain.view.articles.ArticlesModel',
     articles:
       model: 'BlogAppMain.model.Article'
       autoLoad: true
-      proxy:
-        type: 'rest'
-        url: '/articles.json'
-        reader:
-          type: 'json'
-          rootProperty: 'items'

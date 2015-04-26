@@ -4,9 +4,12 @@
 Ext.define 'BlogAppMain.view.articles.ArticlesController',
   extend: 'Ext.app.ViewController'
   alias: 'controller.articles'
+  requires: [
+    'BlogAppMain.service.Article'
+  ]
   config:
     control:
-      'articles':
+      'articles dataview':
         itemdblclick: 'onArticleDblClick'
   routes:
     'articles/:url_slug': 'showArticleBySlug'
@@ -20,7 +23,11 @@ Ext.define 'BlogAppMain.view.articles.ArticlesController',
   onArticleDblClick: (widget, article) ->
     this.redirectTo("articles/#{article.get('url_slug')}")
   showArticleBySlug: (slug) ->
-    debugger
+    BlogAppMain.service.Article.showArticleBySlug(slug, @getViewModel().get('articles'))
   showArticles: ->
-    debugger;
+    # The list of articles are always shown anyway, just may be covered by the article viewer.
+    BlogAppMain.service.Article.hideArticleViewer()
+  getArticleViewer: ->
+    @_articleViewer
+
 

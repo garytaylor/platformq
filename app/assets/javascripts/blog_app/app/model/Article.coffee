@@ -11,3 +11,9 @@ Ext.define 'BlogAppMain.model.Article',
     {name: 'body', type: 'string'},
     {name: 'body_content_type', type: 'string'}
   ]
+  proxy:
+    type: 'rest'
+    url: '/articles.json'
+    reader:
+      type: 'json'
+      rootProperty: 'items'
