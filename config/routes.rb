@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :articles, :only => [:index, :create]
+  resources :articles, only: [:index, :create]
+  resources :subscriptions, only: [:create]
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

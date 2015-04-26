@@ -93,5 +93,8 @@ if the page needed it.  However, I felt maybe this is not what you are looking f
         So far, the subscriptions work when tested with an integration test with mocked data.  The next step is to implement the UI
         for it.
 
+17. Added spec and implementation for REST endpoint for subscriptions (create only - we dont want others grabbing a list of who is subscribed)
+
+
 
 
