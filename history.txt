@@ -70,6 +70,11 @@ if the page needed it.  However, I felt maybe this is not what you are looking f
      like 'created_on', or foreign keys that the user interface is not interested in etc...
      Made the nescessary changes to make the request spec pass.
 
+13. Added an entry point for the app in the form of a welcome controller's index action.
+     Added an ExtJS app for displaying the contents of the working REST end point.  This is not completed at this point,
+     but added just to get the basics working and ensure that everything is wired together properly.
+
+
 
 
 
