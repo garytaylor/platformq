@@ -64,7 +64,11 @@ if the page needed it.  However, I felt maybe this is not what you are looking f
     just so I remain focussed on one failure at a time unless I can immediately see a pattern where I could fix many test
     failures easily in 1 place.
 
-
+12. The request spec was then made to work and detect the fact that we have absolutely nothing coming out of the controller
+     as the view file (articles/index.json.jbuilder) was previously coded to output just the basic structure.
+     Also, set strict mode in the schema validation to ensure that what is output is exactly how we want it, no extra fields
+     like 'created_on', or foreign keys that the user interface is not interested in etc...
+     Made the nescessary changes to make the request spec pass.
 
 
 
