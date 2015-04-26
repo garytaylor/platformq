@@ -18,6 +18,12 @@ describe 'Articles API', :type => :request do
         expect(response_json[:total]).to eql 5
       end
     end
+    describe 'POST /articles' do
+      it 'Should add 1 to the articles list' do
+        post '/articles.json', {url_slug: "sdfsdfdsf",title:"sdfdsfsd", body:"dsfdsfsd"}
+        expect(response).to be_valid_json_for_schema('article')
+      end
+    end
 
   end
 end
