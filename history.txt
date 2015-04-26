@@ -74,7 +74,11 @@ if the page needed it.  However, I felt maybe this is not what you are looking f
      Added an ExtJS app for displaying the contents of the working REST end point.  This is not completed at this point,
      but added just to get the basics working and ensure that everything is wired together properly.
 
-
+14. Added markdown support for the body of the article using the showdown js library.  Performing the converter in the
+    browser was preferred over server side conversion - mainly so that when we come to providing a UI for entering markdown
+    into the system, we can do preview as you type rather than having to keep asking the server for a preview.  Also,
+    if we keep the server focussed on just delivering the JSON in a standard form and let the UI deal with presenting that
+    data to the user, this will keep the server performing well as it has less work to do.
 
 
 

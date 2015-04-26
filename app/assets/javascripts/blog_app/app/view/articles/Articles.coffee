@@ -4,6 +4,7 @@ Ext.define 'BlogAppMain.view.articles.Articles',
   requires: [
     'BlogAppMain.view.articles.ArticlesModel',
     'BlogAppMain.view.articles.ArticlesController',
+    'BlogAppMain.service.Markdown'
 
   ]
   viewModel: 'articles'
@@ -18,7 +19,7 @@ Ext.define 'BlogAppMain.view.articles.Articles',
                 <span class='posted_on'>{posted_on}</span>
                 <div class='title'>{title}</div>
               </div>
-              <div class='content'>{body}</div>
+              <div class='content'>{[BlogAppMain.service.Markdown.convertToHtml(values.body)]}</div>
             </div>
           </tpl>
       </div>"
