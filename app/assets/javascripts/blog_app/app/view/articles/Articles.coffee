@@ -1,5 +1,5 @@
 Ext.define 'BlogAppMain.view.articles.Articles',
-  extend: 'Ext.container.Container'
+  extend: 'Ext.panel.Panel'
   alias: 'widget.articles'
   requires: [
     'BlogAppMain.view.articles.ArticlesModel',
@@ -10,6 +10,11 @@ Ext.define 'BlogAppMain.view.articles.Articles',
   ]
   viewModel: 'articles'
   controller: 'articles'
+  header: false
+  tbar: [
+    {xtype: 'tbfill'}
+    {xtype: 'button', text: 'Add Article', itemId: 'addArticleButton'}
+  ]
   items: [
     xtype: 'dataview'
     bind:

@@ -11,6 +11,8 @@ Ext.define 'BlogAppMain.view.articles.ArticlesController',
     control:
       'articles dataview':
         itemdblclick: 'onArticleDblClick'
+      'articles #addArticleButton':
+        click: 'onAddArticleButtonClick'
   routes:
     'articles/:url_slug': 'showArticleBySlug'
     'articles': 'showArticles'
@@ -29,5 +31,7 @@ Ext.define 'BlogAppMain.view.articles.ArticlesController',
     BlogAppMain.service.Article.hideArticleViewer()
   getArticleViewer: ->
     @_articleViewer
+  onAddArticleButtonClick: ->
+    BlogAppMain.service.Article.showAddArticleWindowForStore(@getViewModel().get('articles'))
 
 

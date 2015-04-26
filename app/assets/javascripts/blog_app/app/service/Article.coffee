@@ -7,6 +7,7 @@ Ext.define 'BlogAppMain.service.Article',
   singleton: true
   requires: [
     'BlogAppMain.view.article.Article'
+    'BlogAppMain.view.article.ArticleEditor'
   ]
   showArticleBySlug: (slug, store) ->
     unless store.isLoaded()
@@ -14,10 +15,7 @@ Ext.define 'BlogAppMain.service.Article',
       return
     filteredStore = Ext.create 'Ext.data.ChainedStore', {source: store}
     filteredStore.filter('url_slug', slug)
-    if @getViewerWindow()
-      @getViewerWindow().lookupReference('article')?.setStore(filteredStore)
-    else
-      @createViewerWindowForStore(filteredStore)
+    @createViewerWindowForStore(filteredStore)
     @getViewerWindow().show()
   hideArticleViewer: ->
     @getViewerWindow()?.close()
@@ -32,6 +30,24 @@ Ext.define 'BlogAppMain.service.Article',
       items: [
         reference: 'article'
         xtype: 'article'
+        store: store
+      ]
+      maximized: true
+  showAddArticleWindowForStore: (store) ->
+    @createAddArticleWindowForStore(store)
+    @_addArticleWindow.show()
+  hideAddArticleWindow: ->
+    @_addArticleWindow?.close()
+    @_addArticleWindow?.destroy()
+    delete @_addArticleWindow
+  createAddArticleWindowForStore: (store) ->
+    @_addArticleWindow ||= Ext.widget 'window',
+      title: 'New Article'
+      modal: true
+      layout: 'fit'
+      items: [
+        reference: 'articleEditor'
+        xtype: 'articleedit'
         store: store
       ]
       maximized: true

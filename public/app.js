@@ -8,7 +8,7 @@ Ext.application({
 
     extend: 'BlogApp.Application',
     
-    autoCreateViewport: 'BlogAppMain.view.articles.Articles'
+    autoCreateViewport: 'BlogAppMain.view.main.Main'
 	
     //-------------------------------------------------------------------------
     // Most customizations should be made to BlogApp.Application. If you need to
