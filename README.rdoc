@@ -18,15 +18,18 @@ with the API correctly.
 As well as the commit logs, I have kept some more details nodes in history.txt which explain my thinking whilst
 developing this code.
 
-Please note that due to this week being an extremely busy week, the code is not complete, but there
-is enough of it to see where I am going with it.  I have got to the point of doing request specs for the API
-and part of the implementation for the API, but there is no UI to drive the API.
-The UI was going to be an ExtJS single page application where I would have used models to reflect the JSON api that
-has been designed.  These models would be hooked up to a store which in turn would be hooked up to a simple data bound
-view which would render the list of articles with data such as the author name etc.. alongside the title.
-Clicking on an article would then bring up a window that displayed the full details of the article.  I expect the UI
-to have taken about 2 hours to do.
-ExtJS was chosen as it is very quick to develop and the code test is assumed to be more about the server side coding than
-the front end.
+The UI is now developed using ExtJS.  Whilst standard ExtJS styling can look nice anyway, I have done a custom component
+for the blog list etc.. and no styling has been done on that at all, so the looks of the blog is very below standard.
+However, what I am demonstrating is functionality and the implementation of that functionality.
+
+There are a couple of shortcuts which I would not do in a production app, but due to time constraints I have had to do here.
+These are :-
+
+1. The current user is always the first user in the database - this is ok for test purposes but obviously not for a production app
+2. I have disabled CSRF protection as I did not implement a way of getting the token to the javascript application.
+3. The way I have integrated the ExtJS app is not ideal.  I have the framework in 'public' so it can be found at '/' and the custom app
+    in app/assets/javascript/blog_app.  The reason for this is the sencha 'command' tools do not have the concept of the url stucture not
+    being directly mapped to the file system, but the rails asset pipeline does.  This was the quickest way to implement this code.
+    If I were developing with Rails and ExtJS 5 alot, I would write a gem to properly integrate it.  I could not find a gem at this point in time.
 
 
