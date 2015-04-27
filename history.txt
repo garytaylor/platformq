@@ -95,6 +95,8 @@ if the page needed it.  However, I felt maybe this is not what you are looking f
 
 17. Added spec and implementation for REST endpoint for subscriptions (create only - we dont want others grabbing a list of who is subscribed)
 
+18. Added spec and implementation for REST end point for adding comments to an article
 
+19. Added UI elements to add and display comments
 
 

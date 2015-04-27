@@ -8,6 +8,7 @@ Ext.define 'BlogAppMain.service.Article',
   requires: [
     'BlogAppMain.view.article.Article'
     'BlogAppMain.view.article.ArticleEditor'
+    'BlogAppMain.view.article.AddComment'
   ]
   showArticleBySlug: (slug, store) ->
     unless store.isLoaded()
@@ -51,3 +52,19 @@ Ext.define 'BlogAppMain.service.Article',
         store: store
       ]
       maximized: true
+  showAddCommentWindowForArticle: (article) ->
+    @createAddCommentWindowForArticle(article)
+    @_addCommentWindow.show()
+  createAddCommentWindowForArticle: (article) ->
+    @_addCommentWindow ||= Ext.widget 'window',
+      title: 'Add Comment'
+      modal: true
+      layout: 'fit'
+      items: [
+        xtype: 'addcomment'
+        article: article
+      ]
+  hideAddCommentWindow: ->
+    @_addCommentWindow?.close()
+    @_addCommentWindow?.destroy()
+    delete @_addCommentWindow
